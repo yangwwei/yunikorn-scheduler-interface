@@ -347,3 +347,130 @@ var Scheduler_ServiceDesc = grpc.ServiceDesc{
 	},
 	Metadata: "yunikorn-scheduler-interface/si.proto",
 }
+
+const (
+	Fleet_RegisterMember_FullMethodName = "/si.v1.Fleet/RegisterMember"
+	Fleet_Heartbeat_FullMethodName      = "/si.v1.Fleet/Heartbeat"
+)
+
+// FleetClient is the client API for Fleet service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type FleetClient interface {
+	RegisterMember(ctx context.Context, in *RegistrationRequest, opts ...grpc.CallOption) (*RegistrationResponse, error)
+	Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error)
+}
+
+type fleetClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewFleetClient(cc grpc.ClientConnInterface) FleetClient {
+	return &fleetClient{cc}
+}
+
+func (c *fleetClient) RegisterMember(ctx context.Context, in *RegistrationRequest, opts ...grpc.CallOption) (*RegistrationResponse, error) {
+	out := new(RegistrationResponse)
+	err := c.cc.Invoke(ctx, Fleet_RegisterMember_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *fleetClient) Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error) {
+	out := new(HeartbeatResponse)
+	err := c.cc.Invoke(ctx, Fleet_Heartbeat_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// FleetServer is the server API for Fleet service.
+// All implementations must embed UnimplementedFleetServer
+// for forward compatibility
+type FleetServer interface {
+	RegisterMember(context.Context, *RegistrationRequest) (*RegistrationResponse, error)
+	Heartbeat(context.Context, *HeartbeatRequest) (*HeartbeatResponse, error)
+	mustEmbedUnimplementedFleetServer()
+}
+
+// UnimplementedFleetServer must be embedded to have forward compatible implementations.
+type UnimplementedFleetServer struct {
+}
+
+func (UnimplementedFleetServer) RegisterMember(context.Context, *RegistrationRequest) (*RegistrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterMember not implemented")
+}
+func (UnimplementedFleetServer) Heartbeat(context.Context, *HeartbeatRequest) (*HeartbeatResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
+}
+func (UnimplementedFleetServer) mustEmbedUnimplementedFleetServer() {}
+
+// UnsafeFleetServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to FleetServer will
+// result in compilation errors.
+type UnsafeFleetServer interface {
+	mustEmbedUnimplementedFleetServer()
+}
+
+func RegisterFleetServer(s grpc.ServiceRegistrar, srv FleetServer) {
+	s.RegisterService(&Fleet_ServiceDesc, srv)
+}
+
+func _Fleet_RegisterMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegistrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FleetServer).RegisterMember(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Fleet_RegisterMember_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FleetServer).RegisterMember(ctx, req.(*RegistrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Fleet_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeartbeatRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FleetServer).Heartbeat(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Fleet_Heartbeat_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FleetServer).Heartbeat(ctx, req.(*HeartbeatRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Fleet_ServiceDesc is the grpc.ServiceDesc for Fleet service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Fleet_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "si.v1.Fleet",
+	HandlerType: (*FleetServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "RegisterMember",
+			Handler:    _Fleet_RegisterMember_Handler,
+		},
+		{
+			MethodName: "Heartbeat",
+			Handler:    _Fleet_Heartbeat_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "yunikorn-scheduler-interface/si.proto",
+}

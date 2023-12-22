@@ -92,6 +92,101 @@ func (TerminationType) EnumDescriptor() ([]byte, []int) {
 	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{0}
 }
 
+type RegistrationResult int32
+
+const (
+	RegistrationResult_Accepted RegistrationResult = 0
+	RegistrationResult_Rejected RegistrationResult = 1
+)
+
+// Enum value maps for RegistrationResult.
+var (
+	RegistrationResult_name = map[int32]string{
+		0: "Accepted",
+		1: "Rejected",
+	}
+	RegistrationResult_value = map[string]int32{
+		"Accepted": 0,
+		"Rejected": 1,
+	}
+)
+
+func (x RegistrationResult) Enum() *RegistrationResult {
+	p := new(RegistrationResult)
+	*p = x
+	return p
+}
+
+func (x RegistrationResult) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RegistrationResult) Descriptor() protoreflect.EnumDescriptor {
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[1].Descriptor()
+}
+
+func (RegistrationResult) Type() protoreflect.EnumType {
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[1]
+}
+
+func (x RegistrationResult) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RegistrationResult.Descriptor instead.
+func (RegistrationResult) EnumDescriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{1}
+}
+
+type HeartbeatResult int32
+
+const (
+	HeartbeatResult_Acknowledged HeartbeatResult = 0
+	HeartbeatResult_Ignored      HeartbeatResult = 1
+	HeartbeatResult_Throttled    HeartbeatResult = 2
+)
+
+// Enum value maps for HeartbeatResult.
+var (
+	HeartbeatResult_name = map[int32]string{
+		0: "Acknowledged",
+		1: "Ignored",
+		2: "Throttled",
+	}
+	HeartbeatResult_value = map[string]int32{
+		"Acknowledged": 0,
+		"Ignored":      1,
+		"Throttled":    2,
+	}
+)
+
+func (x HeartbeatResult) Enum() *HeartbeatResult {
+	p := new(HeartbeatResult)
+	*p = x
+	return p
+}
+
+func (x HeartbeatResult) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (HeartbeatResult) Descriptor() protoreflect.EnumDescriptor {
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[2].Descriptor()
+}
+
+func (HeartbeatResult) Type() protoreflect.EnumType {
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[2]
+}
+
+func (x HeartbeatResult) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use HeartbeatResult.Descriptor instead.
+func (HeartbeatResult) EnumDescriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{2}
+}
+
 // Action from RM
 type NodeInfo_ActionFromRM int32
 
@@ -148,11 +243,11 @@ func (x NodeInfo_ActionFromRM) String() string {
 }
 
 func (NodeInfo_ActionFromRM) Descriptor() protoreflect.EnumDescriptor {
-	return file_yunikorn_scheduler_interface_si_proto_enumTypes[1].Descriptor()
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[3].Descriptor()
 }
 
 func (NodeInfo_ActionFromRM) Type() protoreflect.EnumType {
-	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[1]
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[3]
 }
 
 func (x NodeInfo_ActionFromRM) Number() protoreflect.EnumNumber {
@@ -210,11 +305,11 @@ func (x UpdateContainerSchedulingStateRequest_SchedulingState) String() string {
 }
 
 func (UpdateContainerSchedulingStateRequest_SchedulingState) Descriptor() protoreflect.EnumDescriptor {
-	return file_yunikorn_scheduler_interface_si_proto_enumTypes[2].Descriptor()
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[4].Descriptor()
 }
 
 func (UpdateContainerSchedulingStateRequest_SchedulingState) Type() protoreflect.EnumType {
-	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[2]
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[4]
 }
 
 func (x UpdateContainerSchedulingStateRequest_SchedulingState) Number() protoreflect.EnumNumber {
@@ -266,11 +361,11 @@ func (x EventRecord_Type) String() string {
 }
 
 func (EventRecord_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_yunikorn_scheduler_interface_si_proto_enumTypes[3].Descriptor()
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[5].Descriptor()
 }
 
 func (EventRecord_Type) Type() protoreflect.EnumType {
-	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[3]
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[5]
 }
 
 func (x EventRecord_Type) Number() protoreflect.EnumNumber {
@@ -318,11 +413,11 @@ func (x EventRecord_ChangeType) String() string {
 }
 
 func (EventRecord_ChangeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_yunikorn_scheduler_interface_si_proto_enumTypes[4].Descriptor()
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[6].Descriptor()
 }
 
 func (EventRecord_ChangeType) Type() protoreflect.EnumType {
-	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[4]
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[6]
 }
 
 func (x EventRecord_ChangeType) Number() protoreflect.EnumNumber {
@@ -466,11 +561,11 @@ func (x EventRecord_ChangeDetail) String() string {
 }
 
 func (EventRecord_ChangeDetail) Descriptor() protoreflect.EnumDescriptor {
-	return file_yunikorn_scheduler_interface_si_proto_enumTypes[5].Descriptor()
+	return file_yunikorn_scheduler_interface_si_proto_enumTypes[7].Descriptor()
 }
 
 func (EventRecord_ChangeDetail) Type() protoreflect.EnumType {
-	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[5]
+	return &file_yunikorn_scheduler_interface_si_proto_enumTypes[7]
 }
 
 func (x EventRecord_ChangeDetail) Number() protoreflect.EnumNumber {
@@ -2922,6 +3017,305 @@ func (x *EventRecord) GetResource() *Resource {
 	return nil
 }
 
+type RegistrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name     string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	MemberID string `protobuf:"bytes,2,opt,name=memberID,proto3" json:"memberID,omitempty"`
+}
+
+func (x *RegistrationRequest) Reset() {
+	*x = RegistrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RegistrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegistrationRequest) ProtoMessage() {}
+
+func (x *RegistrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegistrationRequest.ProtoReflect.Descriptor instead.
+func (*RegistrationRequest) Descriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *RegistrationRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RegistrationRequest) GetMemberID() string {
+	if x != nil {
+		return x.MemberID
+	}
+	return ""
+}
+
+type RegistrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result  RegistrationResult `protobuf:"varint,1,opt,name=result,proto3,enum=si.v1.RegistrationResult" json:"result,omitempty"`
+	Message string             `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *RegistrationResponse) Reset() {
+	*x = RegistrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RegistrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegistrationResponse) ProtoMessage() {}
+
+func (x *RegistrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegistrationResponse.ProtoReflect.Descriptor instead.
+func (*RegistrationResponse) Descriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *RegistrationResponse) GetResult() RegistrationResult {
+	if x != nil {
+		return x.Result
+	}
+	return RegistrationResult_Accepted
+}
+
+func (x *RegistrationResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type QueueInfoSnapshot struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name       string    `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Guaranteed *Resource `protobuf:"bytes,2,opt,name=guaranteed,proto3" json:"guaranteed,omitempty"`
+	Max        *Resource `protobuf:"bytes,3,opt,name=max,proto3" json:"max,omitempty"`
+	Used       *Resource `protobuf:"bytes,4,opt,name=used,proto3" json:"used,omitempty"`
+}
+
+func (x *QueueInfoSnapshot) Reset() {
+	*x = QueueInfoSnapshot{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QueueInfoSnapshot) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QueueInfoSnapshot) ProtoMessage() {}
+
+func (x *QueueInfoSnapshot) ProtoReflect() protoreflect.Message {
+	mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QueueInfoSnapshot.ProtoReflect.Descriptor instead.
+func (*QueueInfoSnapshot) Descriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *QueueInfoSnapshot) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *QueueInfoSnapshot) GetGuaranteed() *Resource {
+	if x != nil {
+		return x.Guaranteed
+	}
+	return nil
+}
+
+func (x *QueueInfoSnapshot) GetMax() *Resource {
+	if x != nil {
+		return x.Max
+	}
+	return nil
+}
+
+func (x *QueueInfoSnapshot) GetUsed() *Resource {
+	if x != nil {
+		return x.Used
+	}
+	return nil
+}
+
+type HeartbeatRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	MemberID    string             `protobuf:"bytes,1,opt,name=memberID,proto3" json:"memberID,omitempty"`
+	QueueInfo   *QueueInfoSnapshot `protobuf:"bytes,2,opt,name=queueInfo,proto3" json:"queueInfo,omitempty"`
+	Allocations []*Allocation      `protobuf:"bytes,3,rep,name=allocations,proto3" json:"allocations,omitempty"`
+}
+
+func (x *HeartbeatRequest) Reset() {
+	*x = HeartbeatRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HeartbeatRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HeartbeatRequest) ProtoMessage() {}
+
+func (x *HeartbeatRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HeartbeatRequest.ProtoReflect.Descriptor instead.
+func (*HeartbeatRequest) Descriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *HeartbeatRequest) GetMemberID() string {
+	if x != nil {
+		return x.MemberID
+	}
+	return ""
+}
+
+func (x *HeartbeatRequest) GetQueueInfo() *QueueInfoSnapshot {
+	if x != nil {
+		return x.QueueInfo
+	}
+	return nil
+}
+
+func (x *HeartbeatRequest) GetAllocations() []*Allocation {
+	if x != nil {
+		return x.Allocations
+	}
+	return nil
+}
+
+type HeartbeatResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result  HeartbeatResult `protobuf:"varint,1,opt,name=result,proto3,enum=si.v1.HeartbeatResult" json:"result,omitempty"`
+	Message string          `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *HeartbeatResponse) Reset() {
+	*x = HeartbeatResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HeartbeatResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HeartbeatResponse) ProtoMessage() {}
+
+func (x *HeartbeatResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_yunikorn_scheduler_interface_si_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HeartbeatResponse.ProtoReflect.Descriptor instead.
+func (*HeartbeatResponse) Descriptor() ([]byte, []int) {
+	return file_yunikorn_scheduler_interface_si_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *HeartbeatResponse) GetResult() HeartbeatResult {
+	if x != nil {
+		return x.Result
+	}
+	return HeartbeatResult_Acknowledged
+}
+
+func (x *HeartbeatResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var file_yunikorn_scheduler_interface_si_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
@@ -3439,42 +3833,96 @@ var file_yunikorn_scheduler_interface_si_proto_rawDesc = []byte{
 	0xf7, 0x03, 0x12, 0x16, 0x0a, 0x11, 0x41, 0x4c, 0x4c, 0x4f, 0x43, 0x5f, 0x4e, 0x4f, 0x44, 0x45,
 	0x52, 0x45, 0x4d, 0x4f, 0x56, 0x45, 0x44, 0x10, 0xf8, 0x03, 0x4a, 0x04, 0x08, 0x03, 0x10, 0x04,
 	0x4a, 0x04, 0x08, 0x04, 0x10, 0x05, 0x52, 0x07, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x49, 0x44, 0x52,
-	0x06, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x2a, 0x85, 0x01, 0x0a, 0x0f, 0x54, 0x65, 0x72, 0x6d,
-	0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x18, 0x55,
-	0x4e, 0x4b, 0x4e, 0x4f, 0x57, 0x4e, 0x5f, 0x54, 0x45, 0x52, 0x4d, 0x49, 0x4e, 0x41, 0x54, 0x49,
-	0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x10, 0x00, 0x12, 0x11, 0x0a, 0x0d, 0x53, 0x54, 0x4f,
-	0x50, 0x50, 0x45, 0x44, 0x5f, 0x42, 0x59, 0x5f, 0x52, 0x4d, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07,
-	0x54, 0x49, 0x4d, 0x45, 0x4f, 0x55, 0x54, 0x10, 0x02, 0x12, 0x1a, 0x0a, 0x16, 0x50, 0x52, 0x45,
-	0x45, 0x4d, 0x50, 0x54, 0x45, 0x44, 0x5f, 0x42, 0x59, 0x5f, 0x53, 0x43, 0x48, 0x45, 0x44, 0x55,
-	0x4c, 0x45, 0x52, 0x10, 0x03, 0x12, 0x18, 0x0a, 0x14, 0x50, 0x4c, 0x41, 0x43, 0x45, 0x48, 0x4f,
-	0x4c, 0x44, 0x45, 0x52, 0x5f, 0x52, 0x45, 0x50, 0x4c, 0x41, 0x43, 0x45, 0x44, 0x10, 0x04, 0x32,
-	0xd5, 0x02, 0x0a, 0x09, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x72, 0x12, 0x6a, 0x0a,
-	0x17, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x25, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31,
-	0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x26, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72,
-	0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4d, 0x0a, 0x10, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x2e,
-	0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e,
-	0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x50, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x19, 0x2e,
-	0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31,
-	0x2e, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x3b, 0x0a, 0x0a, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x12, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31,
-	0x2e, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x73,
-	0x69, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x3a, 0x3b, 0x0a, 0x09, 0x73, 0x69, 0x5f, 0x73, 0x65,
-	0x63, 0x72, 0x65, 0x74, 0x12, 0x1d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x4f, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x18, 0xa3, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x73, 0x69, 0x53, 0x65,
-	0x63, 0x72, 0x65, 0x74, 0x42, 0x0b, 0x5a, 0x09, 0x6c, 0x69, 0x62, 0x2f, 0x67, 0x6f, 0x2f, 0x73,
-	0x69, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x06, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x22, 0x45, 0x0a, 0x13, 0x52, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x22, 0x63,
+	0x0a, 0x14, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x19, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x22, 0xa0, 0x01, 0x0a, 0x11, 0x51, 0x75, 0x65, 0x75, 0x65, 0x49, 0x6e, 0x66,
+	0x6f, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x2f, 0x0a,
+	0x0a, 0x67, 0x75, 0x61, 0x72, 0x61, 0x6e, 0x74, 0x65, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x0f, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x52, 0x0a, 0x67, 0x75, 0x61, 0x72, 0x61, 0x6e, 0x74, 0x65, 0x65, 0x64, 0x12, 0x21,
+	0x0a, 0x03, 0x6d, 0x61, 0x78, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x73, 0x69,
+	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x03, 0x6d, 0x61,
+	0x78, 0x12, 0x23, 0x0a, 0x04, 0x75, 0x73, 0x65, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0f, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x52, 0x04, 0x75, 0x73, 0x65, 0x64, 0x22, 0x9b, 0x01, 0x0a, 0x10, 0x48, 0x65, 0x61, 0x72, 0x74,
+	0x62, 0x65, 0x61, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x6d,
+	0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d,
+	0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x12, 0x36, 0x0a, 0x09, 0x71, 0x75, 0x65, 0x75, 0x65,
+	0x49, 0x6e, 0x66, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x73, 0x69, 0x2e,
+	0x76, 0x31, 0x2e, 0x51, 0x75, 0x65, 0x75, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x53, 0x6e, 0x61, 0x70,
+	0x73, 0x68, 0x6f, 0x74, 0x52, 0x09, 0x71, 0x75, 0x65, 0x75, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12,
+	0x33, 0x0a, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x6c, 0x6c,
+	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x22, 0x5d, 0x0a, 0x11, 0x48, 0x65, 0x61, 0x72, 0x74, 0x62, 0x65, 0x61,
+	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2e, 0x0a, 0x06, 0x72, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x73, 0x69, 0x2e, 0x76,
+	0x31, 0x2e, 0x48, 0x65, 0x61, 0x72, 0x74, 0x62, 0x65, 0x61, 0x74, 0x52, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x2a, 0x85, 0x01, 0x0a, 0x0f, 0x54, 0x65, 0x72, 0x6d, 0x69, 0x6e, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x18, 0x55, 0x4e, 0x4b, 0x4e, 0x4f,
+	0x57, 0x4e, 0x5f, 0x54, 0x45, 0x52, 0x4d, 0x49, 0x4e, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0x5f, 0x54,
+	0x59, 0x50, 0x45, 0x10, 0x00, 0x12, 0x11, 0x0a, 0x0d, 0x53, 0x54, 0x4f, 0x50, 0x50, 0x45, 0x44,
+	0x5f, 0x42, 0x59, 0x5f, 0x52, 0x4d, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x54, 0x49, 0x4d, 0x45,
+	0x4f, 0x55, 0x54, 0x10, 0x02, 0x12, 0x1a, 0x0a, 0x16, 0x50, 0x52, 0x45, 0x45, 0x4d, 0x50, 0x54,
+	0x45, 0x44, 0x5f, 0x42, 0x59, 0x5f, 0x53, 0x43, 0x48, 0x45, 0x44, 0x55, 0x4c, 0x45, 0x52, 0x10,
+	0x03, 0x12, 0x18, 0x0a, 0x14, 0x50, 0x4c, 0x41, 0x43, 0x45, 0x48, 0x4f, 0x4c, 0x44, 0x45, 0x52,
+	0x5f, 0x52, 0x45, 0x50, 0x4c, 0x41, 0x43, 0x45, 0x44, 0x10, 0x04, 0x2a, 0x30, 0x0a, 0x12, 0x52,
+	0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x12, 0x0c, 0x0a, 0x08, 0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x65, 0x64, 0x10, 0x00, 0x12,
+	0x0c, 0x0a, 0x08, 0x52, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x65, 0x64, 0x10, 0x01, 0x2a, 0x3f, 0x0a,
+	0x0f, 0x48, 0x65, 0x61, 0x72, 0x74, 0x62, 0x65, 0x61, 0x74, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74,
+	0x12, 0x10, 0x0a, 0x0c, 0x41, 0x63, 0x6b, 0x6e, 0x6f, 0x77, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x64,
+	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x67, 0x6e, 0x6f, 0x72, 0x65, 0x64, 0x10, 0x01, 0x12,
+	0x0d, 0x0a, 0x09, 0x54, 0x68, 0x72, 0x6f, 0x74, 0x74, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x32, 0xd5,
+	0x02, 0x0a, 0x09, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x72, 0x12, 0x6a, 0x0a, 0x17,
+	0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x25, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e,
+	0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26,
+	0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52,
+	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4d, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x2e, 0x73,
+	0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41,
+	0x6c, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x50, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x19, 0x2e, 0x73,
+	0x69, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e,
+	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x3b, 0x0a, 0x0a, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x12, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e,
+	0x4e, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x73, 0x69,
+	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x32, 0x96, 0x01, 0x0a, 0x05, 0x46, 0x6c, 0x65, 0x65, 0x74,
+	0x12, 0x4b, 0x0a, 0x0e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x4d, 0x65, 0x6d, 0x62,
+	0x65, 0x72, 0x12, 0x1a, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b,
+	0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x40, 0x0a,
+	0x09, 0x48, 0x65, 0x61, 0x72, 0x74, 0x62, 0x65, 0x61, 0x74, 0x12, 0x17, 0x2e, 0x73, 0x69, 0x2e,
+	0x76, 0x31, 0x2e, 0x48, 0x65, 0x61, 0x72, 0x74, 0x62, 0x65, 0x61, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x73, 0x69, 0x2e, 0x76, 0x31, 0x2e, 0x48, 0x65, 0x61, 0x72,
+	0x74, 0x62, 0x65, 0x61, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x3a,
+	0x3b, 0x0a, 0x09, 0x73, 0x69, 0x5f, 0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x12, 0x1d, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x46,
+	0x69, 0x65, 0x6c, 0x64, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0xa3, 0x08, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x08, 0x73, 0x69, 0x53, 0x65, 0x63, 0x72, 0x65, 0x74, 0x42, 0x0b, 0x5a, 0x09,
+	0x6c, 0x69, 0x62, 0x2f, 0x67, 0x6f, 0x2f, 0x73, 0x69, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -3489,117 +3937,135 @@ func file_yunikorn_scheduler_interface_si_proto_rawDescGZIP() []byte {
 	return file_yunikorn_scheduler_interface_si_proto_rawDescData
 }
 
-var file_yunikorn_scheduler_interface_si_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
-var file_yunikorn_scheduler_interface_si_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
+var file_yunikorn_scheduler_interface_si_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_yunikorn_scheduler_interface_si_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_yunikorn_scheduler_interface_si_proto_goTypes = []interface{}{
 	(TerminationType)(0),       // 0: si.v1.TerminationType
-	(NodeInfo_ActionFromRM)(0), // 1: si.v1.NodeInfo.ActionFromRM
-	(UpdateContainerSchedulingStateRequest_SchedulingState)(0), // 2: si.v1.UpdateContainerSchedulingStateRequest.SchedulingState
-	(EventRecord_Type)(0),                         // 3: si.v1.EventRecord.Type
-	(EventRecord_ChangeType)(0),                   // 4: si.v1.EventRecord.ChangeType
-	(EventRecord_ChangeDetail)(0),                 // 5: si.v1.EventRecord.ChangeDetail
-	(*RegisterResourceManagerRequest)(nil),        // 6: si.v1.RegisterResourceManagerRequest
-	(*RegisterResourceManagerResponse)(nil),       // 7: si.v1.RegisterResourceManagerResponse
-	(*AllocationRequest)(nil),                     // 8: si.v1.AllocationRequest
-	(*ApplicationRequest)(nil),                    // 9: si.v1.ApplicationRequest
-	(*NodeRequest)(nil),                           // 10: si.v1.NodeRequest
-	(*AllocationResponse)(nil),                    // 11: si.v1.AllocationResponse
-	(*ApplicationResponse)(nil),                   // 12: si.v1.ApplicationResponse
-	(*NodeResponse)(nil),                          // 13: si.v1.NodeResponse
-	(*UpdatedApplication)(nil),                    // 14: si.v1.UpdatedApplication
-	(*RejectedApplication)(nil),                   // 15: si.v1.RejectedApplication
-	(*AcceptedApplication)(nil),                   // 16: si.v1.AcceptedApplication
-	(*RejectedNode)(nil),                          // 17: si.v1.RejectedNode
-	(*AcceptedNode)(nil),                          // 18: si.v1.AcceptedNode
-	(*Resource)(nil),                              // 19: si.v1.Resource
-	(*Quantity)(nil),                              // 20: si.v1.Quantity
-	(*AllocationAsk)(nil),                         // 21: si.v1.AllocationAsk
-	(*PreemptionPolicy)(nil),                      // 22: si.v1.PreemptionPolicy
-	(*AddApplicationRequest)(nil),                 // 23: si.v1.AddApplicationRequest
-	(*RemoveApplicationRequest)(nil),              // 24: si.v1.RemoveApplicationRequest
-	(*UserGroupInformation)(nil),                  // 25: si.v1.UserGroupInformation
-	(*Allocation)(nil),                            // 26: si.v1.Allocation
-	(*AllocationReleasesRequest)(nil),             // 27: si.v1.AllocationReleasesRequest
-	(*AllocationRelease)(nil),                     // 28: si.v1.AllocationRelease
-	(*AllocationAskRelease)(nil),                  // 29: si.v1.AllocationAskRelease
-	(*NodeInfo)(nil),                              // 30: si.v1.NodeInfo
-	(*RejectedAllocationAsk)(nil),                 // 31: si.v1.RejectedAllocationAsk
-	(*RejectedAllocation)(nil),                    // 32: si.v1.RejectedAllocation
-	(*PredicatesArgs)(nil),                        // 33: si.v1.PredicatesArgs
-	(*PreemptionPredicatesArgs)(nil),              // 34: si.v1.PreemptionPredicatesArgs
-	(*PreemptionPredicatesResponse)(nil),          // 35: si.v1.PreemptionPredicatesResponse
-	(*UpdateContainerSchedulingStateRequest)(nil), // 36: si.v1.UpdateContainerSchedulingStateRequest
-	(*UpdateConfigurationRequest)(nil),            // 37: si.v1.UpdateConfigurationRequest
-	(*EventRecord)(nil),                           // 38: si.v1.EventRecord
-	nil,                                           // 39: si.v1.RegisterResourceManagerRequest.BuildInfoEntry
-	nil,                                           // 40: si.v1.RegisterResourceManagerRequest.ExtraConfigEntry
-	nil,                                           // 41: si.v1.Resource.ResourcesEntry
-	nil,                                           // 42: si.v1.AllocationAsk.TagsEntry
-	nil,                                           // 43: si.v1.AddApplicationRequest.TagsEntry
-	nil,                                           // 44: si.v1.Allocation.AllocationTagsEntry
-	nil,                                           // 45: si.v1.NodeInfo.AttributesEntry
-	nil,                                           // 46: si.v1.UpdateConfigurationRequest.ExtraConfigEntry
-	(*descriptorpb.FieldOptions)(nil),             // 47: google.protobuf.FieldOptions
+	(RegistrationResult)(0),    // 1: si.v1.RegistrationResult
+	(HeartbeatResult)(0),       // 2: si.v1.HeartbeatResult
+	(NodeInfo_ActionFromRM)(0), // 3: si.v1.NodeInfo.ActionFromRM
+	(UpdateContainerSchedulingStateRequest_SchedulingState)(0), // 4: si.v1.UpdateContainerSchedulingStateRequest.SchedulingState
+	(EventRecord_Type)(0),                         // 5: si.v1.EventRecord.Type
+	(EventRecord_ChangeType)(0),                   // 6: si.v1.EventRecord.ChangeType
+	(EventRecord_ChangeDetail)(0),                 // 7: si.v1.EventRecord.ChangeDetail
+	(*RegisterResourceManagerRequest)(nil),        // 8: si.v1.RegisterResourceManagerRequest
+	(*RegisterResourceManagerResponse)(nil),       // 9: si.v1.RegisterResourceManagerResponse
+	(*AllocationRequest)(nil),                     // 10: si.v1.AllocationRequest
+	(*ApplicationRequest)(nil),                    // 11: si.v1.ApplicationRequest
+	(*NodeRequest)(nil),                           // 12: si.v1.NodeRequest
+	(*AllocationResponse)(nil),                    // 13: si.v1.AllocationResponse
+	(*ApplicationResponse)(nil),                   // 14: si.v1.ApplicationResponse
+	(*NodeResponse)(nil),                          // 15: si.v1.NodeResponse
+	(*UpdatedApplication)(nil),                    // 16: si.v1.UpdatedApplication
+	(*RejectedApplication)(nil),                   // 17: si.v1.RejectedApplication
+	(*AcceptedApplication)(nil),                   // 18: si.v1.AcceptedApplication
+	(*RejectedNode)(nil),                          // 19: si.v1.RejectedNode
+	(*AcceptedNode)(nil),                          // 20: si.v1.AcceptedNode
+	(*Resource)(nil),                              // 21: si.v1.Resource
+	(*Quantity)(nil),                              // 22: si.v1.Quantity
+	(*AllocationAsk)(nil),                         // 23: si.v1.AllocationAsk
+	(*PreemptionPolicy)(nil),                      // 24: si.v1.PreemptionPolicy
+	(*AddApplicationRequest)(nil),                 // 25: si.v1.AddApplicationRequest
+	(*RemoveApplicationRequest)(nil),              // 26: si.v1.RemoveApplicationRequest
+	(*UserGroupInformation)(nil),                  // 27: si.v1.UserGroupInformation
+	(*Allocation)(nil),                            // 28: si.v1.Allocation
+	(*AllocationReleasesRequest)(nil),             // 29: si.v1.AllocationReleasesRequest
+	(*AllocationRelease)(nil),                     // 30: si.v1.AllocationRelease
+	(*AllocationAskRelease)(nil),                  // 31: si.v1.AllocationAskRelease
+	(*NodeInfo)(nil),                              // 32: si.v1.NodeInfo
+	(*RejectedAllocationAsk)(nil),                 // 33: si.v1.RejectedAllocationAsk
+	(*RejectedAllocation)(nil),                    // 34: si.v1.RejectedAllocation
+	(*PredicatesArgs)(nil),                        // 35: si.v1.PredicatesArgs
+	(*PreemptionPredicatesArgs)(nil),              // 36: si.v1.PreemptionPredicatesArgs
+	(*PreemptionPredicatesResponse)(nil),          // 37: si.v1.PreemptionPredicatesResponse
+	(*UpdateContainerSchedulingStateRequest)(nil), // 38: si.v1.UpdateContainerSchedulingStateRequest
+	(*UpdateConfigurationRequest)(nil),            // 39: si.v1.UpdateConfigurationRequest
+	(*EventRecord)(nil),                           // 40: si.v1.EventRecord
+	(*RegistrationRequest)(nil),                   // 41: si.v1.RegistrationRequest
+	(*RegistrationResponse)(nil),                  // 42: si.v1.RegistrationResponse
+	(*QueueInfoSnapshot)(nil),                     // 43: si.v1.QueueInfoSnapshot
+	(*HeartbeatRequest)(nil),                      // 44: si.v1.HeartbeatRequest
+	(*HeartbeatResponse)(nil),                     // 45: si.v1.HeartbeatResponse
+	nil,                                           // 46: si.v1.RegisterResourceManagerRequest.BuildInfoEntry
+	nil,                                           // 47: si.v1.RegisterResourceManagerRequest.ExtraConfigEntry
+	nil,                                           // 48: si.v1.Resource.ResourcesEntry
+	nil,                                           // 49: si.v1.AllocationAsk.TagsEntry
+	nil,                                           // 50: si.v1.AddApplicationRequest.TagsEntry
+	nil,                                           // 51: si.v1.Allocation.AllocationTagsEntry
+	nil,                                           // 52: si.v1.NodeInfo.AttributesEntry
+	nil,                                           // 53: si.v1.UpdateConfigurationRequest.ExtraConfigEntry
+	(*descriptorpb.FieldOptions)(nil),             // 54: google.protobuf.FieldOptions
 }
 var file_yunikorn_scheduler_interface_si_proto_depIdxs = []int32{
-	39, // 0: si.v1.RegisterResourceManagerRequest.buildInfo:type_name -> si.v1.RegisterResourceManagerRequest.BuildInfoEntry
-	40, // 1: si.v1.RegisterResourceManagerRequest.extraConfig:type_name -> si.v1.RegisterResourceManagerRequest.ExtraConfigEntry
-	21, // 2: si.v1.AllocationRequest.asks:type_name -> si.v1.AllocationAsk
-	27, // 3: si.v1.AllocationRequest.releases:type_name -> si.v1.AllocationReleasesRequest
-	26, // 4: si.v1.AllocationRequest.allocations:type_name -> si.v1.Allocation
-	23, // 5: si.v1.ApplicationRequest.new:type_name -> si.v1.AddApplicationRequest
-	24, // 6: si.v1.ApplicationRequest.remove:type_name -> si.v1.RemoveApplicationRequest
-	30, // 7: si.v1.NodeRequest.nodes:type_name -> si.v1.NodeInfo
-	26, // 8: si.v1.AllocationResponse.new:type_name -> si.v1.Allocation
-	28, // 9: si.v1.AllocationResponse.released:type_name -> si.v1.AllocationRelease
-	29, // 10: si.v1.AllocationResponse.releasedAsks:type_name -> si.v1.AllocationAskRelease
-	31, // 11: si.v1.AllocationResponse.rejected:type_name -> si.v1.RejectedAllocationAsk
-	32, // 12: si.v1.AllocationResponse.rejectedAllocations:type_name -> si.v1.RejectedAllocation
-	15, // 13: si.v1.ApplicationResponse.rejected:type_name -> si.v1.RejectedApplication
-	16, // 14: si.v1.ApplicationResponse.accepted:type_name -> si.v1.AcceptedApplication
-	14, // 15: si.v1.ApplicationResponse.updated:type_name -> si.v1.UpdatedApplication
-	17, // 16: si.v1.NodeResponse.rejected:type_name -> si.v1.RejectedNode
-	18, // 17: si.v1.NodeResponse.accepted:type_name -> si.v1.AcceptedNode
-	41, // 18: si.v1.Resource.resources:type_name -> si.v1.Resource.ResourcesEntry
-	19, // 19: si.v1.AllocationAsk.resourceAsk:type_name -> si.v1.Resource
-	42, // 20: si.v1.AllocationAsk.tags:type_name -> si.v1.AllocationAsk.TagsEntry
-	22, // 21: si.v1.AllocationAsk.preemptionPolicy:type_name -> si.v1.PreemptionPolicy
-	25, // 22: si.v1.AddApplicationRequest.ugi:type_name -> si.v1.UserGroupInformation
-	43, // 23: si.v1.AddApplicationRequest.tags:type_name -> si.v1.AddApplicationRequest.TagsEntry
-	19, // 24: si.v1.AddApplicationRequest.placeholderAsk:type_name -> si.v1.Resource
-	44, // 25: si.v1.Allocation.allocationTags:type_name -> si.v1.Allocation.AllocationTagsEntry
-	19, // 26: si.v1.Allocation.resourcePerAlloc:type_name -> si.v1.Resource
-	22, // 27: si.v1.Allocation.preemptionPolicy:type_name -> si.v1.PreemptionPolicy
-	28, // 28: si.v1.AllocationReleasesRequest.allocationsToRelease:type_name -> si.v1.AllocationRelease
-	29, // 29: si.v1.AllocationReleasesRequest.allocationAsksToRelease:type_name -> si.v1.AllocationAskRelease
+	46, // 0: si.v1.RegisterResourceManagerRequest.buildInfo:type_name -> si.v1.RegisterResourceManagerRequest.BuildInfoEntry
+	47, // 1: si.v1.RegisterResourceManagerRequest.extraConfig:type_name -> si.v1.RegisterResourceManagerRequest.ExtraConfigEntry
+	23, // 2: si.v1.AllocationRequest.asks:type_name -> si.v1.AllocationAsk
+	29, // 3: si.v1.AllocationRequest.releases:type_name -> si.v1.AllocationReleasesRequest
+	28, // 4: si.v1.AllocationRequest.allocations:type_name -> si.v1.Allocation
+	25, // 5: si.v1.ApplicationRequest.new:type_name -> si.v1.AddApplicationRequest
+	26, // 6: si.v1.ApplicationRequest.remove:type_name -> si.v1.RemoveApplicationRequest
+	32, // 7: si.v1.NodeRequest.nodes:type_name -> si.v1.NodeInfo
+	28, // 8: si.v1.AllocationResponse.new:type_name -> si.v1.Allocation
+	30, // 9: si.v1.AllocationResponse.released:type_name -> si.v1.AllocationRelease
+	31, // 10: si.v1.AllocationResponse.releasedAsks:type_name -> si.v1.AllocationAskRelease
+	33, // 11: si.v1.AllocationResponse.rejected:type_name -> si.v1.RejectedAllocationAsk
+	34, // 12: si.v1.AllocationResponse.rejectedAllocations:type_name -> si.v1.RejectedAllocation
+	17, // 13: si.v1.ApplicationResponse.rejected:type_name -> si.v1.RejectedApplication
+	18, // 14: si.v1.ApplicationResponse.accepted:type_name -> si.v1.AcceptedApplication
+	16, // 15: si.v1.ApplicationResponse.updated:type_name -> si.v1.UpdatedApplication
+	19, // 16: si.v1.NodeResponse.rejected:type_name -> si.v1.RejectedNode
+	20, // 17: si.v1.NodeResponse.accepted:type_name -> si.v1.AcceptedNode
+	48, // 18: si.v1.Resource.resources:type_name -> si.v1.Resource.ResourcesEntry
+	21, // 19: si.v1.AllocationAsk.resourceAsk:type_name -> si.v1.Resource
+	49, // 20: si.v1.AllocationAsk.tags:type_name -> si.v1.AllocationAsk.TagsEntry
+	24, // 21: si.v1.AllocationAsk.preemptionPolicy:type_name -> si.v1.PreemptionPolicy
+	27, // 22: si.v1.AddApplicationRequest.ugi:type_name -> si.v1.UserGroupInformation
+	50, // 23: si.v1.AddApplicationRequest.tags:type_name -> si.v1.AddApplicationRequest.TagsEntry
+	21, // 24: si.v1.AddApplicationRequest.placeholderAsk:type_name -> si.v1.Resource
+	51, // 25: si.v1.Allocation.allocationTags:type_name -> si.v1.Allocation.AllocationTagsEntry
+	21, // 26: si.v1.Allocation.resourcePerAlloc:type_name -> si.v1.Resource
+	24, // 27: si.v1.Allocation.preemptionPolicy:type_name -> si.v1.PreemptionPolicy
+	30, // 28: si.v1.AllocationReleasesRequest.allocationsToRelease:type_name -> si.v1.AllocationRelease
+	31, // 29: si.v1.AllocationReleasesRequest.allocationAsksToRelease:type_name -> si.v1.AllocationAskRelease
 	0,  // 30: si.v1.AllocationRelease.terminationType:type_name -> si.v1.TerminationType
 	0,  // 31: si.v1.AllocationAskRelease.terminationType:type_name -> si.v1.TerminationType
-	1,  // 32: si.v1.NodeInfo.action:type_name -> si.v1.NodeInfo.ActionFromRM
-	45, // 33: si.v1.NodeInfo.attributes:type_name -> si.v1.NodeInfo.AttributesEntry
-	19, // 34: si.v1.NodeInfo.schedulableResource:type_name -> si.v1.Resource
-	19, // 35: si.v1.NodeInfo.occupiedResource:type_name -> si.v1.Resource
-	26, // 36: si.v1.NodeInfo.existingAllocations:type_name -> si.v1.Allocation
-	2,  // 37: si.v1.UpdateContainerSchedulingStateRequest.state:type_name -> si.v1.UpdateContainerSchedulingStateRequest.SchedulingState
-	46, // 38: si.v1.UpdateConfigurationRequest.extraConfig:type_name -> si.v1.UpdateConfigurationRequest.ExtraConfigEntry
-	3,  // 39: si.v1.EventRecord.type:type_name -> si.v1.EventRecord.Type
-	4,  // 40: si.v1.EventRecord.eventChangeType:type_name -> si.v1.EventRecord.ChangeType
-	5,  // 41: si.v1.EventRecord.eventChangeDetail:type_name -> si.v1.EventRecord.ChangeDetail
-	19, // 42: si.v1.EventRecord.resource:type_name -> si.v1.Resource
-	20, // 43: si.v1.Resource.ResourcesEntry.value:type_name -> si.v1.Quantity
-	47, // 44: si.v1.si_secret:extendee -> google.protobuf.FieldOptions
-	6,  // 45: si.v1.Scheduler.RegisterResourceManager:input_type -> si.v1.RegisterResourceManagerRequest
-	8,  // 46: si.v1.Scheduler.UpdateAllocation:input_type -> si.v1.AllocationRequest
-	9,  // 47: si.v1.Scheduler.UpdateApplication:input_type -> si.v1.ApplicationRequest
-	10, // 48: si.v1.Scheduler.UpdateNode:input_type -> si.v1.NodeRequest
-	7,  // 49: si.v1.Scheduler.RegisterResourceManager:output_type -> si.v1.RegisterResourceManagerResponse
-	11, // 50: si.v1.Scheduler.UpdateAllocation:output_type -> si.v1.AllocationResponse
-	12, // 51: si.v1.Scheduler.UpdateApplication:output_type -> si.v1.ApplicationResponse
-	13, // 52: si.v1.Scheduler.UpdateNode:output_type -> si.v1.NodeResponse
-	49, // [49:53] is the sub-list for method output_type
-	45, // [45:49] is the sub-list for method input_type
-	45, // [45:45] is the sub-list for extension type_name
-	44, // [44:45] is the sub-list for extension extendee
-	0,  // [0:44] is the sub-list for field type_name
+	3,  // 32: si.v1.NodeInfo.action:type_name -> si.v1.NodeInfo.ActionFromRM
+	52, // 33: si.v1.NodeInfo.attributes:type_name -> si.v1.NodeInfo.AttributesEntry
+	21, // 34: si.v1.NodeInfo.schedulableResource:type_name -> si.v1.Resource
+	21, // 35: si.v1.NodeInfo.occupiedResource:type_name -> si.v1.Resource
+	28, // 36: si.v1.NodeInfo.existingAllocations:type_name -> si.v1.Allocation
+	4,  // 37: si.v1.UpdateContainerSchedulingStateRequest.state:type_name -> si.v1.UpdateContainerSchedulingStateRequest.SchedulingState
+	53, // 38: si.v1.UpdateConfigurationRequest.extraConfig:type_name -> si.v1.UpdateConfigurationRequest.ExtraConfigEntry
+	5,  // 39: si.v1.EventRecord.type:type_name -> si.v1.EventRecord.Type
+	6,  // 40: si.v1.EventRecord.eventChangeType:type_name -> si.v1.EventRecord.ChangeType
+	7,  // 41: si.v1.EventRecord.eventChangeDetail:type_name -> si.v1.EventRecord.ChangeDetail
+	21, // 42: si.v1.EventRecord.resource:type_name -> si.v1.Resource
+	1,  // 43: si.v1.RegistrationResponse.result:type_name -> si.v1.RegistrationResult
+	21, // 44: si.v1.QueueInfoSnapshot.guaranteed:type_name -> si.v1.Resource
+	21, // 45: si.v1.QueueInfoSnapshot.max:type_name -> si.v1.Resource
+	21, // 46: si.v1.QueueInfoSnapshot.used:type_name -> si.v1.Resource
+	43, // 47: si.v1.HeartbeatRequest.queueInfo:type_name -> si.v1.QueueInfoSnapshot
+	28, // 48: si.v1.HeartbeatRequest.allocations:type_name -> si.v1.Allocation
+	2,  // 49: si.v1.HeartbeatResponse.result:type_name -> si.v1.HeartbeatResult
+	22, // 50: si.v1.Resource.ResourcesEntry.value:type_name -> si.v1.Quantity
+	54, // 51: si.v1.si_secret:extendee -> google.protobuf.FieldOptions
+	8,  // 52: si.v1.Scheduler.RegisterResourceManager:input_type -> si.v1.RegisterResourceManagerRequest
+	10, // 53: si.v1.Scheduler.UpdateAllocation:input_type -> si.v1.AllocationRequest
+	11, // 54: si.v1.Scheduler.UpdateApplication:input_type -> si.v1.ApplicationRequest
+	12, // 55: si.v1.Scheduler.UpdateNode:input_type -> si.v1.NodeRequest
+	41, // 56: si.v1.Fleet.RegisterMember:input_type -> si.v1.RegistrationRequest
+	44, // 57: si.v1.Fleet.Heartbeat:input_type -> si.v1.HeartbeatRequest
+	9,  // 58: si.v1.Scheduler.RegisterResourceManager:output_type -> si.v1.RegisterResourceManagerResponse
+	13, // 59: si.v1.Scheduler.UpdateAllocation:output_type -> si.v1.AllocationResponse
+	14, // 60: si.v1.Scheduler.UpdateApplication:output_type -> si.v1.ApplicationResponse
+	15, // 61: si.v1.Scheduler.UpdateNode:output_type -> si.v1.NodeResponse
+	42, // 62: si.v1.Fleet.RegisterMember:output_type -> si.v1.RegistrationResponse
+	45, // 63: si.v1.Fleet.Heartbeat:output_type -> si.v1.HeartbeatResponse
+	58, // [58:64] is the sub-list for method output_type
+	52, // [52:58] is the sub-list for method input_type
+	52, // [52:52] is the sub-list for extension type_name
+	51, // [51:52] is the sub-list for extension extendee
+	0,  // [0:51] is the sub-list for field type_name
 }
 
 func init() { file_yunikorn_scheduler_interface_si_proto_init() }
@@ -4004,16 +4470,76 @@ func file_yunikorn_scheduler_interface_si_proto_init() {
 				return nil
 			}
 		}
+		file_yunikorn_scheduler_interface_si_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RegistrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_yunikorn_scheduler_interface_si_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RegistrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_yunikorn_scheduler_interface_si_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*QueueInfoSnapshot); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_yunikorn_scheduler_interface_si_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HeartbeatRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_yunikorn_scheduler_interface_si_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HeartbeatResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_yunikorn_scheduler_interface_si_proto_rawDesc,
-			NumEnums:      6,
-			NumMessages:   41,
+			NumEnums:      8,
+			NumMessages:   46,
 			NumExtensions: 1,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_yunikorn_scheduler_interface_si_proto_goTypes,
 		DependencyIndexes: file_yunikorn_scheduler_interface_si_proto_depIdxs,

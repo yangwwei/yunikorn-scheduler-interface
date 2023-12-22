@@ -949,3 +949,57 @@ message EventRecord {
    reserved "reason";
 }
 ```
+
+#### Federation
+
+```protobuf
+
+message RegistrationRequest {
+  string name = 1;
+  string memberID = 2;
+}
+
+enum RegistrationResult {
+  Accepted = 0;
+  Rejected = 1;
+}
+
+message RegistrationResponse {
+  RegistrationResult result = 1;
+  string message = 2;
+}
+
+message QueueInfoSnapshot {
+  string name = 1;
+  Resource guaranteed = 2;
+  Resource max = 3;
+  Resource used = 4;
+}
+
+message HeartbeatRequest {
+  string memberID = 1;
+  QueueInfoSnapshot queueInfo = 2;
+  repeated Allocation allocations = 3;
+}
+
+enum HeartbeatResult {
+  Acknowledged = 0;
+  Ignored = 1;
+  Throttled = 2;
+}
+
+message HeartbeatResponse {
+  HeartbeatResult result = 1;
+  string message = 2;
+}
+
+service Fleet {
+  
+  rpc RegisterMember(RegistrationRequest) returns (RegistrationResponse) {}
+  
+  
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {} 
+}
+
+
+```
